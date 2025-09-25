@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detector</title>
+    <style>
+        /* General styling */
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            height: 100%;
+        }
+        /* Background styling */
+        .background {
+            background: linear-gradient(to right, rgba(251, 250, 251, 0.718) 50%, rgb(232, 41, 41) 50%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+        }
+        /* Navigation bar styling */
+        .navbar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background-color: black;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        /* Prediction form styling */
+        .prediction-form {
+            margin-top: 20px;
+        }
+        input[type="text"] {
+            width: 300px;
+            padding: 10px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: black;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: darkgrey;
+        }
+    </style>
+</head>
+<body>
+
+<div class="background">
+    <!-- Navigation bar -->
+    <div class="navbar">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/login">Login</a>
+        <a href="/signin">Signin</a>
+    </div>
+
+    <!-- Main content (Image/placeholder) -->
+    <div>
+        <img src="/static/images/f1.jpeg" alt="Logo" width="400" height="300"/>    
+    </div>
+    
+    <!-- Prediction menu -->
+    <div class="prediction-form">
+        <form action="/predict" method="post">
+            <input type="text" name="news_text" placeholder="Enter news text here" required><br><br>
+            <button type="submit">Check</button>
+        </form>
+        
+        <!-- Display prediction result if available -->
+        {% if pred %}
+            <p>{{ pred }}</p>
+            <p>{{ action }}</p>
+        {% endif %}
+    </div>
+</div>
+
+</body>
+</html>

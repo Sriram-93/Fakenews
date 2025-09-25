@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        /* Base styling for the page */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background: linear-gradient(to right, #f7cac9, #92a8d1); /* Soft gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        /* Container styling */
+        .about-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            max-width: 800px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Title styling */
+        .about-container h1 {
+            font-size: 32px;
+            margin-bottom: 10px;
+            color: #333;
+            text-align: center;
+        }
+
+        /* Paragraph styling */
+        .about-container p {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-top: 10px;
+            color: #666;
+            text-align: justify;
+        }
+
+        /* Team section styling */
+        .team-section {
+            margin-top: 30px;
+        }
+
+        .team-section h2 {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        /* Individual team member card */
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .team-member img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .team-member-info {
+            color: #333;
+        }
+
+        .team-member-info h3 {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .team-member-info p {
+            margin: 5px 0 0;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Back to Home button styling */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6A82FB;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #4f68d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="about-container">
+      <div class="team-section">
+        <h1>Fake News Detection Project Summary</h1>
+        <h2>Project Team</h2>
+      <ul>
+          <li><strong>Addressing Misinformation Challenge:</strong> The project focuses on tackling the spread of misinformation in the digital space, a critical issue with the rise of online content.</li><br>
+          <li><strong>Project Aim:</strong> The project aims to develop an automated system for detecting fake news, a type of misinformation that is spread through online content.</li><br>
+          <li><strong>Difficulty in Distinguishing Real vs. Fake Content:</strong> The widespread availability of content online makes it increasingly challenging to differentiate factual information from false or misleading content.</li><br>
+          <li><strong>High-impact Areas:</strong> Misinformation is especially concerning in fields like health, politics, and finance, where incorrect information can lead to serious, real-world consequences.</li><br>
+          <li><strong>Use of Advanced Machine Learning and NLP:</strong> The project employs cutting-edge machine learning and natural language processing techniques to create an automated system for detecting fake news.</li><br>
+          <li><strong>Feature Analysis:</strong> By examining linguistic, contextual, and sentiment-based features, the system classifies news articles as either “fake” or “real.”</li><br>
+          <li><strong>High Classification Accuracy:</strong> The system is designed to achieve high accuracy in distinguishing fake news, making it reliable and effective.</li><br>
+          <li><strong>Supporting Media Platforms and Fact-checkers:</strong> This tool is intended to aid media platforms, fact-checkers, and users in verifying the credibility of content and making informed decisions.</li><br>
+          <li><strong>Promoting Responsible Content Sharing:</strong> The project encourages responsible sharing of information by providing users with a trusted source for verifying content accuracy.</li><br>
+          <li><strong>Scalable and Reliable Solution:</strong> The aim is to create a solution that is both scalable and efficient, capable of handling large amounts of data across platforms.</li><br>
+          <li><strong>Contributing to the Fight Against Misinformation:</strong> Ultimately, the project strives to empower users and enhance the credibility of digital information, contributing to the broader effort against misinformation.</li><br>
+      </ul>    
+      </div>
+<style>
+  /* General styling for body */
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+  }
+
+  /* Dropdown container styling */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* Button style */
+  .dropdown-button {
+    background-color: #007bff;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-button:hover {
+    background-color: #0056b3;
+  }
+
+  /* Dropdown content styling */
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    margin-top: 5px;
+    min-width: 180px;
+    z-index: 1;
+  }
+
+  /* Individual dropdown item styling */
+  .dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    border-bottom: 1px solid #f1f1f1;
+    transition: background-color 0.3s ease;
+  }
+
+  .dropdown-content a:hover {
+    background-color: #f1f1f1;
+  }
+
+  /* Show dropdown content on button click */
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+</head>
+<body>
+  <div class="container-fluid mt-3">
+    </div> 
+        <!-- Back to Home Button -->
+        <a href="/" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

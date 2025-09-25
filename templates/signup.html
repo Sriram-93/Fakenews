@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In Page</title>
+    <style>
+        /* Basic styling for the entire page */
+        body {
+            background: linear-gradient(to right, #6A82FB, #FC5C7D); /* Eye-catching gradient */
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Container for the sign-in form */
+        .signin-container {
+            background-color: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            width: 320px;
+            text-align: center;
+        }
+
+        /* Title styling */
+        .signin-container h2 {
+            margin-bottom: 20px;
+            color: #333;
+            font-size: 28px;
+        }
+
+        /* Input fields styling */
+        .signin-container input[type="email"],
+        .signin-container input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+        }
+
+        /* Sign-in button styling */
+        .signin-container button {
+            width: 100%;
+            padding: 12px;
+            margin-top: 20px;
+            background-color: #6A82FB;
+            border: none;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .signin-container button:hover {
+            background-color: #4f68d1;
+        }
+
+        /* Link styling below the button */
+        .signin-container .link {
+            margin-top: 15px;
+            font-size: 14px;
+            color: #888;
+        }
+
+        .signin-container .link a {
+            color: #6A82FB;
+            text-decoration: none;
+        }
+
+        .signin-container .link a:hover {
+            text-decoration: underline;
+        }
+
+        /* Back to Home button styling */
+        .back-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #6A82FB;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 8px;
+            text-align: center;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #4f68d1;
+        }
+    </style>
+</head>
+<body>
+    <div class="signin-container">
+        <h2>Sign In</h2>
+        <form action="#" method="post">
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+        <div class="link">
+            <p>Forgot your password? <a href="#">Reset it</a></p>
+            <p>Don't have an account? <a href="#">Sign up</a></p>
+        </div>
+
+        <!-- Back to Home Button -->
+        <a href="project.html" class="back-button">Back to Home</a>
+    </div>
+</body>
+</html>

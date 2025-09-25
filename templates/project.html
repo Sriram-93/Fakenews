@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fake News Detection</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column; /* Stack items vertically */
+            justify-content: center; /* Center items vertically */
+            align-items: center; /* Center items horizontally */
+            position: relative; /* For positioning elements */
+            overflow: hidden; /* Hide overflow */
+        }
+        /* Split background */
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, #ff6b6b 50%, #4ecdc4 50%);
+            z-index: 0; /* Behind other elements */
+        }
+        nav {
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+            padding: 15px 30px; /* Padding */
+            border-radius: 10px; /* Rounded corners */
+            position: absolute; /* Fixed position */
+            top: 20px; /* Align to the top */
+            left: 50%; /* Center horizontally */
+            transform: translateX(-50%); /* Center align */
+            z-index: 1000; /* Ensure it stays above other elements */
+        }
+        nav a {
+            color: white; /* Link color */
+            text-decoration: none; /* Remove underline */
+            margin: 0 15px; /* Spacing between links */
+            font-weight: bold; /* Bold text */
+            transition: color 0.3s; /* Smooth transition for hover effect */
+        }
+        nav a:hover {
+            color: #ffcc00; /* Change color on hover */
+        }
+        .content {
+            background: rgba(255, 255, 255, 0.9); /* Light background for content */
+            padding: 40px; /* Padding around content */
+            border-radius: 15px; /* Rounded corners */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Shadow effect */
+            text-align: center; /* Center text */
+            position: relative; /* For stacking context */
+            z-index: 1; /* Ensure it stays above background */
+        }
+        h1 {
+            font-size: 2.5em; /* Larger heading */
+            margin: 0; /* Remove default margin */
+        }
+        p {
+            font-size: 1.2em; /* Larger paragraph text */
+            margin: 10px 0 0; /* Margin for spacing */
+        }
+    </style>
+</head>
+<body>
+    <div class="background"> <!-- Background design element -->
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/login">Login</a>
+        <a href="/signin">Signin</a>
+    </nav>
+    <div class="content">
+       <img src="fakenews.jpg">
+    </div>
+    <div class="prediction-form">
+        <form action="/predict" method="post">
+            <input type="text" name="news_text" placeholder="Enter news text here" required><br><br>
+            <button type="submit">Submit</button>
+        </form>
+        
+        <!-- Display prediction result if available -->
+        {% if pred %}
+            <p>{{ pred }}</p>
+            <p>{{ action }}</p>
+        {% endif %}
+    </div>
+    </div>
+</body>
+</html>
