@@ -1,115 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <style>
-        /* Basic styling for the whole page */
-        body {
-            background: linear-gradient(135deg, #8EC5FC, #E0C3FC); /* Nice gradient background */
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-        }
+{% extends "layout.html" %}
 
-        /* Container for the login form */
-        .login-container {
-            background-color: #ffffff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            width: 300px;
-            text-align: center;
-        }
-
-        /* Form heading */
-        .login-container h2 {
-            margin: 0 0 20px;
-            color: #333;
-            font-size: 24px;
-        }
-
-        /* Input fields styling */
-        .login-container input[type="text"],
-        .login-container input[type="password"] {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            font-size: 16px;
-        }
-
-        /* Submit button styling */
-        .login-container button {
-            width: 100%;
-            padding: 12px;
-            margin-top: 20px;
-            background-color: #8EC5FC;
-            border: none;
-            border-radius: 8px;
-            color: white;
-            font-size: 16px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .login-container button:hover {
-            background-color: #6fa8e0;
-        }
-
-        /* Additional link below the button */
-        .login-container .link {
-            margin-top: 12px;
-            font-size: 14px;
-            color: #888;
-        }
-
-        .login-container .link a {
-            color: #8EC5FC;
-            text-decoration: none;
-        }
-
-        .login-container .link a:hover {
-            text-decoration: underline;
-        }
-
-        /* Back to Home button styling */
-        .back-button {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #8EC5FC;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            text-align: center;
-            transition: background-color 0.3s;
-        }
-
-        .back-button:hover {
-            background-color: #6fa8e0;
-        }
-    </style>
-</head>
-<body>
-    <div class="login-container">
-        <h2>Login</h2>
-        <form action="#" method="post">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-        </form>
-        <div class="link">
-            <p>Don't have an account? <a href="#">Sign up</a></p>
+{% block content %}
+<div class="container" style="display: flex; align-items: center; justify-content: center; min-height: 80vh;">
+    <div class="card" style="width: 100%; max-width: 440px; padding: 4rem 3rem;">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <svg width="48" height="48" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom: 1.5rem;">
+                <rect width="32" height="32" rx="10" fill="var(--primary)"/>
+                <path d="M12 16L15 19L20 13" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h2 style="font-size: 2rem; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 0.5rem;">Welcome back</h2>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Enter your credentials to access your account.</p>
         </div>
 
-        <!-- Back to Home Button -->
-        <a href="project.html" class="back-button">Back to Home</a>
+        <form action="#" method="post">
+            <div style="display: flex; flex-direction: column; gap: 1.5rem; margin-bottom: 2rem;">
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <label for="username" style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted);">Username</label>
+                    <input type="text" name="username" id="username" class="analysis-input" style="padding: 0.875rem 1rem; margin: 0; border-radius: 12px;" placeholder="johndoe" required>
+                </div>
+                <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <label for="password" style="font-size: 0.875rem; font-weight: 600; color: var(--text-muted);">Password</label>
+                        <a href="#" style="font-size: 0.875rem; font-weight: 600; color: var(--primary); text-decoration: none;">Forgot password?</a>
+                    </div>
+                    <input type="password" name="password" id="password" class="analysis-input" style="padding: 0.875rem 1rem; margin: 0; border-radius: 12px;" placeholder="••••••••" required>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block" style="border-radius: 12px; height: 3.5rem;">Log in to TruthVerify</button>
+        </form>
+
+        <div style="margin-top: 2rem; text-align: center; font-size: 0.95rem; color: var(--text-muted);">
+            Don't have an account? <a href="/signin" style="color: var(--primary); font-weight: 700; text-decoration: none;">Sign up for free</a>
+        </div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

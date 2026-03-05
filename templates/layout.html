@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if title %}{{ title }} - {% endif %}TruthVerify 2.0</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <script>
+        // Inline script to prevent theme flash
+        const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', savedTheme);
+    </script>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="/" class="nav-brand">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect width="32" height="32" rx="8" fill="var(--primary)"/>
+                <path d="M11 16.5L14.5 20L21 13.5" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            TruthVerify
+        </a>
+        <div class="nav-links">
+            <a href="/" class="{% if request.path == '/' %}active{% endif %}">Home</a>
+            <a href="/about" class="{% if request.path == '/about' %}active{% endif %}">About</a>
+            <a href="/login">Login</a>
+            <a href="/signin" class="btn btn-primary" style="padding: 0.6rem 1.2rem;">Get Started</a>
+            <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+                <svg class="sun" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg" style="display:none;"><circle cx="10" cy="10" r="5"/><path d="M10 1v2M10 17v2M1 10h2M17 10h2M15 4l-1.5 1.5M5 14l-1.5 1.5M15 16l-1.5-1.5M5 6l-1.5-1.5"/></svg>
+                <svg class="moon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" xmlns="http://www.w3.org/2000/svg"><path d="M17.3 12.7A7 7 0 1110 3a7 7 0 007.3 9.7z"/></svg>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <div class="container" style="padding: 2rem 0; text-align: left; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem;">
+            <div>
+                <a href="/" class="nav-brand" style="margin-bottom: 1rem;">TruthVerify</a>
+                <p style="color: var(--text-muted);">Empowering truth seekers with AI-driven authentication. Built for the modern web.</p>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; font-weight: 700;">Product</h4>
+                <ul style="list-style: none; color: var(--text-muted); line-height: 2;">
+                    <li><a href="/" style="text-decoration: none; color: inherit;">Detection Hub</a></li>
+                    <li><a href="/about" style="text-decoration: none; color: inherit;">How it Works</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">API (Coming Soon)</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 style="margin-bottom: 1.5rem; font-weight: 700;">Legal</h4>
+                <ul style="list-style: none; color: var(--text-muted); line-height: 2;">
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Privacy Policy</a></li>
+                    <li><a href="#" style="text-decoration: none; color: inherit;">Terms of Service</a></li>
+                </ul>
+            </div>
+        </div>
+        <p style="padding-top: 3rem; border-top: 1px solid var(--border);">&copy; 2026 TruthVerify AI. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const toggleBtn = document.getElementById('theme-toggle');
+        const sunIcon = toggleBtn.querySelector('.sun');
+        const moonIcon = toggleBtn.querySelector('.moon');
+
+        function updateIcons(theme) {
+            if (theme === 'dark') {
+                sunIcon.style.display = 'block';
+                moonIcon.style.display = 'none';
+            } else {
+                sunIcon.style.display = 'none';
+                moonIcon.style.display = 'block';
+            }
+        }
+
+        updateIcons(savedTheme);
+
+        toggleBtn.addEventListener('click', () => {
+            const currentTheme = document.documentElement.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateIcons(newTheme);
+        });
+    </script>
+</body>
+</html>
